@@ -1,0 +1,21 @@
+import pandas as pd
+rent = pd.read_csv("data/raw/rtb_rent_prices.csv")
+print(f"Shape: {rent.shape}")
+print(f"Columns: {rent.columns.tolist()}")
+print(rent.head(3))
+print(f"Missing values:\n{rent.isnull().sum()}")
+print("\n" + "="*50 + "\n")
+## working on cso data set
+cso = pd.read_csv("data/raw/cso_housing_completions.csv")
+print(f"Shape: {cso.shape}")
+print(f"columns: {cso.columns.tolist()}")
+print(cso.head(3))
+print(f"Missing values:\n{cso.isnull().sum()}")
+print("\n" + "="*50 + "\n")
+## working on hea data
+hea = pd.read_csv("data/raw/hea_enrolment_2024_25.csv")
+print(f"Shape: {hea.shape}")
+print(f"columns: {hea.columns.tolist()}")
+print(hea.head(3))
+print(f"Missing values:\n{hea.isnull().sum()}")
+print("\n" + "="*50 + "\n")

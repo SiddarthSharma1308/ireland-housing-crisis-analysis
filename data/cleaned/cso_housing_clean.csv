@@ -1,0 +1,211 @@
+county,year,housing_completions
+Carlow,2019,194
+Carlow,2020,200
+Carlow,2021,252
+Carlow,2022,231
+Carlow,2023,239
+Carlow,2024,270
+Carlow,2025,225
+Cavan,2019,137
+Cavan,2020,196
+Cavan,2021,195
+Cavan,2022,257
+Cavan,2023,259
+Cavan,2024,244
+Cavan,2025,350
+Clare,2019,386
+Clare,2020,390
+Clare,2021,410
+Clare,2022,555
+Clare,2023,403
+Clare,2024,534
+Clare,2025,625
+Cork,2019,2137
+Cork,2020,2452
+Cork,2021,2220
+Cork,2022,3062
+Cork,2023,3099
+Cork,2024,3535
+Cork,2025,3727
+Donegal,2019,430
+Donegal,2020,574
+Donegal,2021,477
+Donegal,2022,649
+Donegal,2023,635
+Donegal,2024,632
+Donegal,2025,686
+Dublin,2019,1781
+Dublin,2020,2201
+Dublin,2021,2077
+Dublin,2022,3871
+Dublin,2023,3432
+Dublin,2024,3349
+Dublin,2025,4521
+Dún Laoghaire Rathdown,2019,1139
+Dún Laoghaire Rathdown,2020,822
+Dún Laoghaire Rathdown,2021,1366
+Dún Laoghaire Rathdown,2022,2706
+Dún Laoghaire Rathdown,2023,3562
+Dún Laoghaire Rathdown,2024,2025
+Dún Laoghaire Rathdown,2025,2041
+Fingal,2019,2318
+Fingal,2020,1386
+Fingal,2021,1861
+Fingal,2022,2031
+Fingal,2023,2358
+Fingal,2024,2426
+Fingal,2025,3608
+Galway,2019,1047
+Galway,2020,1045
+Galway,2021,1047
+Galway,2022,1308
+Galway,2023,1313
+Galway,2024,1235
+Galway,2025,1478
+Ireland,2019,21034
+Ireland,2020,20491
+Ireland,2021,20456
+Ireland,2022,29622
+Ireland,2023,32486
+Ireland,2024,30147
+Ireland,2025,36284
+Kerry,2019,444
+Kerry,2020,569
+Kerry,2021,442
+Kerry,2022,611
+Kerry,2023,613
+Kerry,2024,479
+Kerry,2025,725
+Kildare,2019,1898
+Kildare,2020,1661
+Kildare,2021,2033
+Kildare,2022,2624
+Kildare,2023,2706
+Kildare,2024,1422
+Kildare,2025,2176
+Kilkenny,2019,290
+Kilkenny,2020,383
+Kilkenny,2021,325
+Kilkenny,2022,421
+Kilkenny,2023,552
+Kilkenny,2024,502
+Kilkenny,2025,522
+Laois,2019,240
+Laois,2020,339
+Laois,2021,391
+Laois,2022,512
+Laois,2023,744
+Laois,2024,653
+Laois,2025,844
+Leitrim,2019,39
+Leitrim,2020,39
+Leitrim,2021,85
+Leitrim,2022,68
+Leitrim,2023,101
+Leitrim,2024,118
+Leitrim,2025,124
+Limerick City &,2019,552
+Limerick City &,2020,509
+Limerick City &,2021,597
+Limerick City &,2022,762
+Limerick City &,2023,788
+Limerick City &,2024,1003
+Limerick City &,2025,872
+Longford,2019,132
+Longford,2020,101
+Longford,2021,124
+Longford,2022,123
+Longford,2023,119
+Longford,2024,126
+Longford,2025,99
+Louth,2019,667
+Louth,2020,624
+Louth,2021,664
+Louth,2022,789
+Louth,2023,1081
+Louth,2024,1171
+Louth,2025,1541
+Mayo,2019,437
+Mayo,2020,412
+Mayo,2021,370
+Mayo,2022,451
+Mayo,2023,520
+Mayo,2024,573
+Mayo,2025,501
+Meath,2019,1636
+Meath,2020,1515
+Meath,2021,1268
+Meath,2022,1851
+Meath,2023,1540
+Meath,2024,1620
+Meath,2025,2134
+Monaghan,2019,281
+Monaghan,2020,213
+Monaghan,2021,201
+Monaghan,2022,336
+Monaghan,2023,235
+Monaghan,2024,253
+Monaghan,2025,315
+Offaly,2019,227
+Offaly,2020,198
+Offaly,2021,246
+Offaly,2022,409
+Offaly,2023,543
+Offaly,2024,393
+Offaly,2025,323
+Roscommon,2019,153
+Roscommon,2020,159
+Roscommon,2021,209
+Roscommon,2022,177
+Roscommon,2023,194
+Roscommon,2024,196
+Roscommon,2025,226
+Sligo,2019,114
+Sligo,2020,174
+Sligo,2021,144
+Sligo,2022,212
+Sligo,2023,262
+Sligo,2024,202
+Sligo,2025,394
+South Dublin,2019,1657
+South Dublin,2020,1622
+South Dublin,2021,942
+South Dublin,2022,1747
+South Dublin,2023,3234
+South Dublin,2024,3080
+South Dublin,2025,3517
+Tipperary,2019,312
+Tipperary,2020,299
+Tipperary,2021,305
+Tipperary,2022,417
+Tipperary,2023,507
+Tipperary,2024,482
+Tipperary,2025,805
+Waterford City &,2019,441
+Waterford City &,2020,463
+Waterford City &,2021,523
+Waterford City &,2022,552
+Waterford City &,2023,555
+Waterford City &,2024,740
+Waterford City &,2025,723
+Westmeath,2019,244
+Westmeath,2020,288
+Westmeath,2021,243
+Westmeath,2022,403
+Westmeath,2023,500
+Westmeath,2024,481
+Westmeath,2025,740
+Wexford,2019,586
+Wexford,2020,620
+Wexford,2021,692
+Wexford,2022,949
+Wexford,2023,965
+Wexford,2024,1065
+Wexford,2025,1062
+Wicklow,2019,1115
+Wicklow,2020,1037
+Wicklow,2021,747
+Wicklow,2022,1538
+Wicklow,2023,1427
+Wicklow,2024,1338
+Wicklow,2025,1380
