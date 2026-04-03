@@ -150,6 +150,195 @@ if page == " Overview":
         to building an entire new town.
         """)
 
+    st.markdown("---")
+    st.subheader("Evidence-Based Policy Recommendations")
+    st.markdown("*Based on our 5-pillar analysis, here are data-driven solutions:*")
+
+    rec1, rec2, rec3 = st.columns(3)
+
+    with rec1:
+        st.success("""
+        Fix Shadow Supply
+        
+        53,148 units approved but never built.
+        
+        Recommendation: Government viability 
+        financing fund for approved developments 
+        stuck on financing grounds. Target: 
+        convert 50% of shadow supply within 3 years.
+        """)
+
+        st.success("""
+        Fix Planning Delays
+        
+        Processing time up 60% to 48 weeks.
+        
+        Recommendation: Automatic approval 
+        if ABP misses statutory deadline. 
+        Remove appeals as a blocking tactic 
+        by introducing financial penalties 
+        for frivolous objections.
+        """)
+
+    with rec2:
+        st.success("""
+        Student Accommodation
+        
+        0.789 correlation between international 
+        students and rent proven statistically.
+        
+        Recommendation: Mandatory purpose-built 
+        student accommodation for all HEI 
+        expansions. No new international student 
+        intake without corresponding bed supply.
+        """)
+
+        st.success("""
+        IP Processing Reform
+        
+        22,548 people waiting 1.5 years 
+        needing 8,199 housing units.
+        
+        Recommendation: Fast-track processing 
+        to under 6 months. Regional dispersal 
+        strategy - spread IPAS accommodation 
+        across all 26 counties not just Dublin.
+        """)
+
+    with rec3:
+        st.success("""
+        Rural Housing Targets
+        
+        Leitrim 10.28% and Longford 10.18% 
+        annual rent growth - fastest in Ireland.
+        
+        Recommendation: Dedicated social 
+        housing targets for high-stress rural 
+        counties. Current policy focuses on 
+        Dublin while rural Ireland is being 
+        quietly squeezed.
+        """)
+
+        st.success("""
+        Post-Brexit Policy Gap
+        
+        Dublin III collapse means UK-rejected 
+        applicants now enter full Irish system.
+        
+        Recommendation: Bilateral returns 
+        agreement with UK. Ireland and UK 
+        should negotiate replacement for 
+        Dublin III cooperation framework.
+        """)
+
+    st.markdown("---")
+    st.info("""
+    Data Confidence Note: 
+    Rent growth, supply gap, student correlation and planning delay findings 
+    are based on verified official datasets. IP and migration figures represent 
+    lower bound estimates due to data collection limitations around irregular arrivals.
+    All recommendations are proportionate responses to the scale of evidence found.
+    """)
+
+    st.markdown("---")
+    st.subheader("On-The-Ground Reality - Beyond What Data Can Capture")
+    st.markdown("*Qualitative insights from direct operational experience working at a refuge centre in Galway, Ireland*")
+
+    st.warning("""
+    Important Note: The following observations are based on direct 
+    real-world experience and corroborated by policy literature - but cannot 
+    be fully quantified with currently available public datasets. They represent 
+    known gaps in the official data picture.
+    """)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("""
+        **Irregular Arrivals and Self-Presentation**
+        
+        Official IP statistics only capture applicants 
+        at point of registration. In practice, individuals 
+        arrive by various means - road, sea, air - and 
+        self-present directly to Garda stations with no 
+        documentation, claiming protection immediately.
+        
+        These individuals are recorded identically to 
+        port-of-entry applicants in official data - making 
+        it impossible to distinguish irregular from regular 
+        arrivals in any public dataset.
+        
+        Data gap: True irregular arrival figures are 
+        unknown. Official IP numbers are a lower bound.
+        """)
+
+        st.markdown("""
+        **Multi-Country Asylum Applications**
+        
+        Individuals rejected in other countries - 
+        including post-Brexit UK - are entering the 
+        full Irish system. Pre-Brexit, Dublin III allowed 
+        returns to the country of first EU entry. 
+        Post-Brexit, that mechanism collapsed entirely.
+        
+        From January 2021 to June 2025, only 38 people 
+        were successfully removed from the UK under 
+        inadmissibility rules - effectively zero enforcement.
+        
+        Data gap: Prior country applications are not 
+        recorded in Irish IP datasets.
+        """)
+
+    with col2:
+        st.markdown("""
+        **Processing Backlog as Housing Demand**
+        
+        The 79.5 week median processing time creates 
+        sustained housing demand - applicants receive 
+        government-provided accommodation for the entire 
+        duration of their case, regardless of outcome.
+        
+        With appeal processes adding further time, total 
+        system residence can exceed 3-4 years before 
+        final determination. During this entire period, 
+        housing demand is generated on the state.
+        
+        Data gap: Total system duration including 
+        appeals is not publicly tracked per applicant.
+        """)
+
+        st.markdown("""
+        **Nationality Concentration Not Captured**
+        
+        Official data shows national-level nationality 
+        breakdowns - Nigeria 21.7%, Jordan 15.5%, 
+        Pakistan 7.5%, Somalia 7.0%, Bangladesh 5.4%.
+        
+        Ground reality shows significant concentration 
+        in specific accommodation centres and counties - 
+        creating localised housing pressure invisible 
+        in county-level statistics.
+        
+        Data gap: County-level nationality breakdown 
+        is not available in public IPAS data.
+        """)
+
+    st.markdown("---")
+    st.error("""
+    The Core Policy Failure: Ireland's housing system was not designed 
+    to absorb simultaneous demand shocks from:
+    
+    - 100,000 Ukrainian arrivals under EU Temporary Protection Directive 2022
+    - Growing non-EU IP applications from conflict zones
+    - Post-Brexit collapse of UK-Ireland returns cooperation
+    - International student sector expansion without accommodation planning
+    - Planning system deterioration reducing new supply
+    
+    Each factor alone would be manageable. All five simultaneously - without 
+    coordinated policy response - created the crisis our data documents.
+    """)
+
+
         # ============================================
 # PAGE 2 — RENT ANALYSIS
 # ============================================
