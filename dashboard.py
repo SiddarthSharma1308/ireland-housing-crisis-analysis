@@ -3,6 +3,69 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
+# Custom CSS styling
+st.markdown("""
+    <style>
+    /* Clean white main area */
+    .stApp {
+        background-color: #ffffff;
+    }
+    
+    /* Dark navy sidebar */
+    [data-testid="stSidebar"] {
+        background-color: #1d3557;
+    }
+    
+    /* White sidebar text */
+    [data-testid="stSidebar"] * {
+        color: white !important;
+    }
+    
+    /* Sidebar radio buttons */
+    [data-testid="stSidebar"] .stRadio label {
+        color: white !important;
+        font-size: 15px !important;
+        padding: 5px 0px !important;
+    }
+    
+    /* Sidebar title */
+    [data-testid="stSidebar"] h1 {
+        color: white !important;
+        font-size: 20px !important;
+    }
+    
+    /* Main titles */
+    h1 {
+        color: #1d3557 !important;
+        border-bottom: 3px solid #457b9d;
+        padding-bottom: 10px;
+    }
+    
+    /* Subheaders */
+    h2, h3 {
+        color: #457b9d !important;
+    }
+    
+    /* Metric cards */
+    [data-testid="stMetric"] {
+        background-color: #f0f4f8;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 1px 1px 4px rgba(0,0,0,0.05);
+    }
+    
+    [data-testid="stMetricValue"] {
+        color: #1d3557 !important;
+        font-weight: bold !important;
+    }
+
+    /* Hide streamlit branding */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+""", unsafe_allow_html=True)
+
 # ============================================
 # IRELAND HOUSING CRISIS DASHBOARD
 # ============================================
@@ -37,13 +100,13 @@ st.sidebar.markdown("---")
 
 page = st.sidebar.radio(
     "Navigate to:",
-    [" Overview",
-     " Rent Analysis", 
-     " Supply Gap",
-     " Student Demand",
-     " Migration Pressure",
-     " Planning Failure",
-     " Stress Index"]
+    ["Overview",
+     "Rent Analysis", 
+     "Supply Gap",
+     "Student Demand",
+     "Migration Pressure",
+     "Planning Failure",
+     "Stress Index"]
 )
 
 st.sidebar.markdown("---")
@@ -57,9 +120,10 @@ st.sidebar.markdown("- An Bord Plánála Statistics")
 # ============================================
 # PAGE 1 — OVERVIEW
 # ============================================
-if page == " Overview":
-    st.title(" Ireland Housing Crisis — Multi-Pillar Analysis")
-    st.markdown("### A data-driven investigation into Ireland's housing emergency")
+if page == "Overview":
+    st.title("Ireland Housing Crisis - Multi-Pillar Analysis")
+    st.markdown("### A 5-Pillar Data-Driven Investigation")
+    st.markdown("*Analysing rent growth, supply failure, student demand, migration pressure and planning system collapse across all 26 Irish counties 2019-2024*")
     st.markdown("---")
 
     # Key metrics row
@@ -342,7 +406,7 @@ if page == " Overview":
         # ============================================
 # PAGE 2 — RENT ANALYSIS
 # ============================================
-elif page == " Rent Analysis":
+elif page == "Rent Analysis":
     st.title(" Rent Analysis")
     st.markdown("### How have rents changed across Ireland?")
     st.markdown("---")
@@ -398,7 +462,7 @@ elif page == " Rent Analysis":
 # ============================================
 # PAGE 3 — SUPPLY GAP
 # ============================================
-elif page == " Supply Gap":
+elif page == "Supply Gap":
     st.title(" Housing Supply Gap")
     st.markdown("### Are we building enough homes?")
     st.markdown("---")
@@ -456,7 +520,7 @@ elif page == " Supply Gap":
 # ============================================
 # PAGE 4 — STUDENT DEMAND
 # ============================================
-elif page == " Student Demand":
+elif page == "Student Demand":
     st.title(" Student Demand Analysis")
     st.markdown("### Do international students drive rent increases?")
     st.markdown("---")
@@ -505,8 +569,9 @@ elif page == " Student Demand":
 # ============================================
 # PAGE 5 — MIGRATION PRESSURE
 # ============================================
-elif page == " Migration Pressure":
-    st.title(" Migration & International Protection")
+
+elif page == "Migration Pressure":
+    st.title("Migration & International Protection")
     st.markdown("### The hidden housing demand from IP applicants")
     st.markdown("---")
 
@@ -520,38 +585,44 @@ elif page == " Migration Pressure":
 
     st.markdown("---")
 
-    # Nationality pie chart
-    fig = px.pie(
-        ip_nationality,
-        values='pct_2024',
-        names='nationality',
-        title='Top Nationalities — IP Applications 2024',
-        hole=0.4
+    fig = px.bar(
+        ip_nationality.sort_values('pct_2024', ascending=True),
+        x='pct_2024',
+        y='nationality',
+        orientation='h',
+        title='Top Nationalities - IP Applications 2024 (%)',
+        labels={'pct_2024': 'Percentage (%)', 'nationality': 'Nationality'},
+        color='pct_2024',
+        color_continuous_scale='Blues',
+        text='pct_2024'
     )
-    st.plotly_chart(fig, use_container_width=True)
+    fig.update_traces(texttemplate='%{text}%', textposition='outside')
+    fig.update_layout(plot_bgcolor='white', showlegend=False)
+    st.plotly_chart(fig)
 
-    # Backlog metrics
-    st.subheader(" System Backlog")
-    st.dataframe(ip_backlog, use_container_width=True)
+    st.subheader("System Backlog")
+    st.dataframe(ip_backlog)
 
     st.warning("""
-     **Data Limitation:** Official IP statistics record applicants at point 
+    Data Limitation: Official IP statistics record applicants at point 
     of registration. Irregular arrivals who self-present to Garda are recorded 
-    identically to port-of-entry applicants — meaning these figures represent 
+    identically to port-of-entry applicants - meaning these figures represent 
     a lower bound estimate of true housing demand.
     """)
 
     st.info("""
-    **Post-Brexit Impact:** The collapse of Dublin III returns cooperation 
+    Post-Brexit Impact: The collapse of Dublin III returns cooperation 
     between UK and Ireland means applicants previously managed through 
-    UK-Ireland cooperation now enter the full Irish system — adding 
+    UK-Ireland cooperation now enter the full Irish system - adding 
     sustained housing demand not anticipated in pre-2020 planning.
     """)
+
+
 
 # ============================================
 # PAGE 6 — PLANNING FAILURE
 # ============================================
-elif page == " Planning Failure":
+elif page == "Planning Failure":
     st.title(" Planning System Failure")
     st.markdown("### How planning delays are killing housing delivery")
     st.markdown("---")
@@ -601,7 +672,7 @@ elif page == " Planning Failure":
 # ============================================
 # PAGE 7 — STRESS INDEX
 # ============================================
-elif page == " Stress Index":
+elif page == "Stress Index":
     st.title(" Housing Stress Index")
     st.markdown("### Which counties are under most housing pressure?")
     st.markdown("---")
