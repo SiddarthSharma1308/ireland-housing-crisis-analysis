@@ -4,16 +4,33 @@ A data-driven, multi-pillar analysis of Ireland's private rental market crisis. 
 
 ---
 
-## 📊 Project Overview
+## 📊 Key Findings
+
+> **Every single county in Ireland saw rents more than double between 2015 and 2025.**
+
+Analysis of 372,000+ RTB tenancy records (2007–2025Q3) across all 26 counties reveals:
+
+| Finding | Detail |
+|--------|---------|
+| 🔴 Highest increase | Longford: **+170%** (€422 → €1,140/month) |
+| 🔴 Galway increase | **+119.5%** (€757 → €1,662/month) |
+| 🔴 Dublin increase | **+78.5%** (€1,218 → €2,173/month) — lowest % but highest absolute rent |
+| 🟡 National pattern | Crisis has spread far beyond Dublin — traditionally low-cost counties now seeing steepest rises |
+
+*Source: RTB Average Monthly Rent Report via CSO API (RIQ02), 2015Q1 vs 2025Q3*
+
+---
+
+## 📋 Project Overview
 
 This project investigates four systemic drivers of Ireland's housing crisis using public datasets from RTB, CSO, HEA, An Bord Plánála, and Census 2022:
 
 | Pillar | Focus |
 |--------|-------|
+| **Rent Trend Analysis** | County-level rent inflation across all 26 counties, 2007–2025 |
 | **Student Demand Displacement** | How third-level enrollment growth displaces local renters in university cities |
 | **Planning System Paralysis** | An Bord Plánála approval rates, timelines, and bottlenecks |
 | **Institutional Landlord Consolidation** | REITs and large-scale landlord market concentration trends |
-| **Refugee Accommodation Pressure** | Impact of State accommodation demand on private rental supply |
 
 ---
 
@@ -32,10 +49,13 @@ This project investigates four systemic drivers of Ireland's housing crisis usin
 ireland-housing-crisis-analysis/
 │
 ├── data/
-│   ├── raw/          # Raw data from public sources
-│   └── cleaned/      # Processed datasets ready for analysis
+│   ├── raw/
+│   │   └── rtb_rent.csv          # 372,000+ RTB tenancy records (2007–2025Q3)
+│   └── cleaned/
+│       └── county_rent_increase_2015_2025.csv  # County-level % increase analysis
 │
 ├── dashboard.py      # Main Streamlit dashboard (7 pages)
+├── fetch_rtb.py      # RTB data ingestion via CSO API
 ├── analysis.py       # Core analytical logic
 ├── download_data.py  # Data ingestion scripts
 ├── load_data.py      # Data loading utilities
@@ -81,13 +101,12 @@ pip install streamlit pandas plotly
 
 # Run the dashboard
 streamlit run dashboard.py
-```
 
 ---
 
 ## 👤 Author
 
-**Siddarth Sharma**
+**Siddarth Sharma**  
 MSc Business Analytics — University of Galway (2025)
 
 [LinkedIn](https://linkedin.com/in/siddarth-sharma2000) | [GitHub](https://github.com/SiddarthSharma1308)
