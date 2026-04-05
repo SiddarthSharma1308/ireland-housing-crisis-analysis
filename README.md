@@ -6,6 +6,7 @@ A data-driven, multi-pillar analysis of Ireland's private rental market crisis. 
 
 ## 📊 Key Findings
 
+### Pillar 1 — Rent Inflation (RTB Data)
 > **Every single county in Ireland saw rents more than double between 2015 and 2025.**
 
 Analysis of 372,000+ RTB tenancy records (2007–2025Q3) across all 26 counties reveals:
@@ -21,16 +22,32 @@ Analysis of 372,000+ RTB tenancy records (2007–2025Q3) across all 26 counties 
 
 ---
 
+### Pillar 2 — Student Demand Displacement (HEA Data)
+> **Non-Irish student enrollment grew +87.8% between 2015 and 2025 — adding 20,825 students who all compete directly in the private rental market.**
+
+| Year | Non-Irish Students | Change vs 2015 |
+|------|-------------------|----------------|
+| 2015/2016 | 23,710 | baseline |
+| 2018/2019 | 29,080 | +22.6% |
+| 2021/2022 | 31,720 | +33.8% |
+| 2024/2025 | 44,535 | **+87.8%** |
+
+**The correlation:** In the same period Galway rents rose +119.5%, non-Irish enrollment at Irish universities grew +87.8% — students who cannot live at home and must enter the private rental market.
+
+*Source: HEA Enrolled Students Dashboard, Domicile filter: non-Republic of Ireland (2024/25)*
+
+---
+
 ## 📋 Project Overview
 
 This project investigates four systemic drivers of Ireland's housing crisis using public datasets from RTB, CSO, HEA, An Bord Plánála, and Census 2022:
 
-| Pillar | Focus |
-|--------|-------|
-| **Rent Trend Analysis** | County-level rent inflation across all 26 counties, 2007–2025 |
-| **Student Demand Displacement** | How third-level enrollment growth displaces local renters in university cities |
-| **Planning System Paralysis** | An Bord Plánála approval rates, timelines, and bottlenecks |
-| **Institutional Landlord Consolidation** | REITs and large-scale landlord market concentration trends |
+| Pillar | Status | Focus |
+|--------|--------|-------|
+| **Rent Trend Analysis** | ✅ Complete | County-level rent inflation across all 26 counties, 2007–2025 |
+| **Student Demand Displacement** | ✅ Complete | Non-Irish enrollment growth vs rent inflation, 2015–2025 |
+| **Planning System Paralysis** | 🔄 In progress | An Bord Plánála approval rates, timelines, and bottlenecks |
+| **Institutional Landlord Consolidation** | 🔄 In progress | REITs and large-scale landlord market concentration trends |
 
 ---
 
@@ -50,12 +67,14 @@ ireland-housing-crisis-analysis/
 │
 ├── data/
 │   ├── raw/
-│   │   └── rtb_rent.csv          # 372,000+ RTB tenancy records (2007–2025Q3)
+│   │   └── rtb_rent.csv                          # 372,000+ RTB tenancy records (2007–2025Q3)
 │   └── cleaned/
-│       └── county_rent_increase_2015_2025.csv  # County-level % increase analysis
+│       ├── county_rent_increase_2015_2025.csv     # County-level % rent increase analysis
+│       └── hea_international_enrollment_2007_2025.csv  # Non-Irish student enrollment trends
 │
 ├── dashboard.py      # Main Streamlit dashboard (7 pages)
 ├── fetch_rtb.py      # RTB data ingestion via CSO API
+├── fetch_hea.py      # HEA student enrollment data
 ├── analysis.py       # Core analytical logic
 ├── download_data.py  # Data ingestion scripts
 ├── load_data.py      # Data loading utilities
@@ -101,6 +120,7 @@ pip install streamlit pandas plotly
 
 # Run the dashboard
 streamlit run dashboard.py
+```
 
 ---
 
